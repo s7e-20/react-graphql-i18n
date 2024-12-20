@@ -5,11 +5,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   error?: string;
 }
 
-export const TextInput: React.FC<Props> = ({
-  label,
-  error,
-  ...rest
-}) => {
+export const TextInput: React.FC<Props> = ({ label, error, ...rest }) => {
   const id = React.useId();
 
   return (

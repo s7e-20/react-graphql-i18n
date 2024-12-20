@@ -3,20 +3,17 @@ import { BiLoader } from "react-icons/bi";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
-  onClick: () => void;
-  disabled?: boolean;
-  loading?: boolean;
-  className?: string;
-  variant?: "fill" | "outline";
   rightIcon?: React.ReactNode;
+  variant?: "fill" | "outline";
+  loading?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   disabled = false,
-  loading = false,
-  variant = "fill",
   rightIcon,
   label,
+  variant = "fill",
+  loading = false,
   ...rest
 }) => {
   const baseClasses =
@@ -31,7 +28,7 @@ export const Button: React.FC<ButtonProps> = ({
     variant === "fill" ? fillClasses : outlineClasses
   } ${disabled || loading ? disabledClasses : ""} ${
     loading ? loadingClasses : ""
-  } ${rest.className}`;
+  }`;
 
   return (
     <button disabled={disabled || loading} className={appliedClasses} {...rest}>
