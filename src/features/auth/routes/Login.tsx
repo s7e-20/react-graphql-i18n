@@ -5,10 +5,10 @@ import { TextInput } from "../../../components/fields/TextInput";
 import { useLogin } from "../hooks/useLogin";
 
 export const Login = () => {
-  const { register, handleSubmit, errors, onSubmit } = useLogin();
+  const { register, handleSubmit, errors, onSubmit, loading } = useLogin();
 
   return (
-    <div className="min-h-screen flex justify-center items-center">
+    <div className="min-h-screen flex justify-center pt-[50px]">
       <form
         className="w-80 flex flex-col gap-y-4"
         onSubmit={handleSubmit(onSubmit)}
@@ -18,15 +18,18 @@ export const Login = () => {
           autoFocus
           label="Email"
           {...register("email")}
+          disabled={loading}
           error={errors.email?.message}
         />
         <TextInput
           label="Password"
           type="password"
+          disabled={loading}
           {...register("password")}
           error={errors.password?.message}
         />
         <Button
+          loading={loading}
           label="Login"
           type="submit"
           rightIcon={<IoMdArrowRoundForward />}

@@ -9,10 +9,10 @@ export const Account = () => {
   const { logout } = useLogout();
 
   return (
-    <div className="bg-base-100 min-h-screen flex justify-center items-center">
+    <div className="min-h-screen pt-[50px] flex justify-center">
       {loading && <BiLoader className="animate-spin text-4xl" />}
       {!loading && (
-        <div className="flex flex-col gap-y-4">
+        <div className="flex justify-between items-center gap-y-4 w-[90vw] h-fit">
           <div className="flex gap-x-4">
             <TextInput label="First Name" disabled value={user?.firstName} />
             <TextInput label="Last Name" disabled value={user?.lastName} />
