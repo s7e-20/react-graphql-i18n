@@ -3,8 +3,8 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation } from "@apollo/client";
 import { LOGIN_MUTATION } from "../../../queries/auth";
-import { useNavigate } from "react-router-dom";
-import React from "react";
+import { AuthContext } from "../../../components/AuthProvider";
+import React, { useContext } from "react";
 import toast from "react-hot-toast";
 
 const schema = yup.object().shape({
@@ -13,7 +13,7 @@ const schema = yup.object().shape({
 });
 
 export const useLogin = () => {
-  const navigate = useNavigate();
+  const { updateToken } = useContext(AuthContext);
 
   const {
     register,
@@ -34,8 +34,7 @@ export const useLogin = () => {
       const token = response?.data?.login?.jwt;
 
       if (token) {
-        localStorage.setItem("token", response.data.login.jwt);
-        navigate("/account");
+        updateToken(token);
       }
     } catch (err) {
       console.log(err);

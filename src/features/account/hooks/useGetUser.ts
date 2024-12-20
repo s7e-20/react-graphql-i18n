@@ -1,9 +1,9 @@
 import { useQuery } from "@apollo/client";
-import React from "react";
+import React, { useContext } from "react";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import { GET_USER_QUERY } from "../../../queries/user";
+import { AuthContext } from "../../../components/AuthProvider";
 
 interface User {
   id: string;
@@ -13,24 +13,14 @@ interface User {
 }
 
 export const useGetUser = () => {
-  const navigate = useNavigate();
-  const token = localStorage.getItem("token");
+  const { token } = useContext(AuthContext);
 
   let userId: string | undefined = undefined;
-
-  React.useEffect(() => {
-    if (!token) {
-      navigate("/");
-    }
-  }, [navigate, token]);
-
-  if (!!token) {
-    try {
-      const decodedToken: { id: string } = jwtDecode(token);
-      userId = decodedToken.id;
-    } catch (error) {
-      console.error("Failed to decode token", error);
-    }
+  try {
+    const decodedToken: { id: string } = jwtDecode(token!);
+    userId = decodedToken.id;
+  } catch (error) {
+    console.error("Failed to decode token", error, token);
   }
 
   const { data, loading, error } = useQuery(GET_USER_QUERY, {

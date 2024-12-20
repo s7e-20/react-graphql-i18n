@@ -1,12 +1,14 @@
+import React, { useContext } from 'react';
 import { BiLoader } from "react-icons/bi";
-import { useLogout } from "../../../hooks/useLogout";
 import { TextInput } from "../../../components/fields/TextInput";
 import { Button } from "../../../components/Button";
+import { AuthContext } from "../../../components/AuthProvider";
 import { useGetUser } from "../hooks/useGetUser";
 
 export const Account = () => {
   const { user, loading } = useGetUser();
-  const { logout } = useLogout();
+  const { updateToken } = useContext(AuthContext);
+  const logout = () => updateToken(null);
 
   return (
     <div className="min-h-screen pt-[50px] flex justify-center">
