@@ -3,7 +3,7 @@ import { IoMdArrowRoundForward } from "react-icons/io";
 import { useTranslation } from "react-i18next";
 
 import { Button } from "../../components/Button";
-import { TextInput } from "../../components/fields/TextInput";
+import { TextInput } from "../../components/TextInput";
 import { AuthContext } from "../../components/AuthProvider";
 import { useLogin } from "./useLogin";
 

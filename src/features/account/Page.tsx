@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { BiLoader } from "react-icons/bi";
-import { TextInput } from "../../components/fields/TextInput";
+import { TextInput } from "../../components/TextInput";
 import { Button } from "../../components/Button";
 import { AuthContext } from "../../components/AuthProvider";
 import { useGetUser } from "./useGetUser";

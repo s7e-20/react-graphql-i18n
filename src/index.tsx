@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { ApolloContextProvider as ApolloProvider } from "./components/ApolloProvider";
 import { AuthProvider } from "./components/AuthProvider";
@@ -14,14 +13,12 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <ApolloProvider>
-        <AuthProvider>
-          <App />
-        </AuthProvider>
-      </ApolloProvider>
-      <Toaster />
-    </BrowserRouter>
+    <ApolloProvider>
+      <AuthProvider>
+        <App />
+        <Toaster />
+      </AuthProvider>
+    </ApolloProvider>
   </React.StrictMode>
 );
 
