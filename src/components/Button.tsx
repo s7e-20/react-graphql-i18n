@@ -17,7 +17,7 @@ export const Button: React.FC<ButtonProps> = ({
   ...rest
 }) => {
   const baseClasses =
-    "px-4 py-2 text-lg font-medium rounded-md flex items-center justify-center gap-x-2";
+    "px-3 py-1 text-lg font-medium rounded-md flex items-center justify-center gap-x-2";
   const fillClasses = "bg-primary text-white hover:bg-secondary";
   const outlineClasses =
     "bg-transparent text-primary border border-primary hover:bg-primary hover:text-white";

@@ -18,7 +18,7 @@ export const TextInput: React.FC<Props> = ({ label, error, ...rest }) => {
       <input
         id={id}
         {...rest}
-        className="border border-primary p-1 rounded-md disabled:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary"
+        className="border border-primary p-1 rounded-md disabled:bg-neutral disabled:cursor-no-drop focus:outline-none focus:ring-2 focus:ring-primary"
       />
       {error && <p className="text-red-500">{error}</p>}
     </div>
