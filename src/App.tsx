@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 import "./App.css";
-import { LoginPage } from "./pages/Login";
-import { AccountPage } from "./pages/Account";
+import { Login as LoginPage } from "./features/auth/routes/Login";
+import { Account as AccountPage } from "./features/account/routes/Account";
 import { AuthContext } from "./components/AuthProvider";
 
 function App() {
