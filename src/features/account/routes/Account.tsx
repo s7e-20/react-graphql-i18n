@@ -7,11 +7,7 @@ import { useGetUser } from "../hooks/useGetUser";
 
 export const Account = () => {
   const { token, userId, updateToken } = useContext(AuthContext);
-  console.log('token', token);
-  console.log('userId', userId);
   const { user, loading } = useGetUser(token, userId);
-  console.log('user', user);
-  console.log('loading', loading);
   const logout = () => updateToken(null);
 
   return (

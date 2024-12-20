@@ -20,9 +20,6 @@ export const useGetUser = (token: string | null, userId: string | null) => {
       },
     },
   });
-  console.log('data', data);
-  console.log('loading', loading);
-  console.log('error', error);
 
   React.useEffect(() => {
     if (error) {
