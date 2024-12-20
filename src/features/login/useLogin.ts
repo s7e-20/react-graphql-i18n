@@ -1,20 +1,17 @@
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation } from "@apollo/client";
-import { LOGIN_MUTATION } from "../../../queries/auth";
-import { AuthContext } from "../../../components/AuthProvider";
-import React, { useContext } from "react";
+import { yupResolver } from "@hookform/resolvers/yup";
+import React from "react";
+import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import * as yup from "yup";
+import { LOGIN_MUTATION } from "../../gql/mutations/auth";
 
 const schema = yup.object().shape({
   email: yup.string().email("Invalid email").required("Email is required"),
   password: yup.string().required("Password is required"),
 });
 
-export const useLogin = () => {
-  const { updateToken } = useContext(AuthContext);
-
+export const useLogin = (updateToken: (token: string) => void) => {
   const {
     register,
     handleSubmit,

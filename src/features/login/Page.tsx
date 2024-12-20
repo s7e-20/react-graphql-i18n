@@ -1,13 +1,16 @@
+import React, { useContext } from "react";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { useTranslation } from "react-i18next";
 
-import { Button } from "../../../components/Button";
-import { TextInput } from "../../../components/fields/TextInput";
-import { useLogin } from "../hooks/useLogin";
+import { Button } from "../../components/Button";
+import { TextInput } from "../../components/fields/TextInput";
+import { AuthContext } from "../../components/AuthProvider";
+import { useLogin } from "./useLogin";
 
 export const Login = () => {
   const { t } = useTranslation('common');
-  const { register, handleSubmit, errors, onSubmit, loading } = useLogin();
+  const { updateToken } = useContext(AuthContext);
+  const { register, handleSubmit, errors, onSubmit, loading } = useLogin(updateToken);
 
   return (
     <div className="min-h-screen flex justify-center pt-[50px]">

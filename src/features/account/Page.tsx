@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { BiLoader } from "react-icons/bi";
-import { TextInput } from "../../../components/fields/TextInput";
-import { Button } from "../../../components/Button";
-import { AuthContext } from "../../../components/AuthProvider";
-import { useGetUser } from "../hooks/useGetUser";
+import { TextInput } from "../../components/fields/TextInput";
+import { Button } from "../../components/Button";
+import { AuthContext } from "../../components/AuthProvider";
+import { useGetUser } from "./useGetUser";
 import { useTranslation } from "react-i18next";
 
 export const Account = () => {

@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
 import toast from "react-hot-toast";
-import { GET_USER_QUERY } from "../../../queries/user";
+import { GET_USER_QUERY } from "../../gql/queries/user";
 
 interface User {
   id: string;

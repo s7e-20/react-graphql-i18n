@@ -3,8 +3,8 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import "./App.css";
-import { Login as LoginPage } from "./features/auth/routes/Login";
-import { Account as AccountPage } from "./features/account/routes/Account";
+import { Login as LoginPage } from "./features/login/Page";
+import { Account as AccountPage } from "./features/account/Page";
 import { PreventionGuard } from "./components/PreventionGuard";
 import { AuthGuard } from "./components/AuthGuard";
 import { LanguageOutlet } from "./components/LanguageOutlet";
