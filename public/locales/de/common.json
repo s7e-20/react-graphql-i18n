@@ -1,0 +1,13 @@
+{
+  "login": {
+    "welcome": "Welkom",
+    "email": "E-mail",
+    "password": "Wachtwoord",
+    "submit": "Inloggen"
+  },
+  "account": {
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "logout": "Ausloggen"
+  }
+}

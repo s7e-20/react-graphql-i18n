@@ -1,10 +1,12 @@
 import { IoMdArrowRoundForward } from "react-icons/io";
+import { useTranslation } from "react-i18next";
 
 import { Button } from "../../../components/Button";
 import { TextInput } from "../../../components/fields/TextInput";
 import { useLogin } from "../hooks/useLogin";
 
 export const Login = () => {
+  const { t } = useTranslation('common');
   const { register, handleSubmit, errors, onSubmit, loading } = useLogin();
 
   return (
@@ -13,16 +15,18 @@ export const Login = () => {
         className="w-80 flex flex-col gap-y-4"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <h3 className="text-center font-bold text-3xl">Welcome</h3>
+        <h3 className="text-center font-bold text-3xl">
+          {t("login.welcome")}
+        </h3>
         <TextInput
           autoFocus
-          label="Email"
+          label={t("login.email")}
           {...register("email")}
           disabled={loading}
           error={errors.email?.message}
         />
         <TextInput
-          label="Password"
+          label={t("login.password")}
           type="password"
           disabled={loading}
           {...register("password")}
@@ -30,7 +34,7 @@ export const Login = () => {
         />
         <Button
           loading={loading}
-          label="Login"
+          label={t("login.submit")}
           type="submit"
           rightIcon={<IoMdArrowRoundForward />}
         />

@@ -1,14 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 import { BiLoader } from "react-icons/bi";
 import { TextInput } from "../../../components/fields/TextInput";
 import { Button } from "../../../components/Button";
 import { AuthContext } from "../../../components/AuthProvider";
 import { useGetUser } from "../hooks/useGetUser";
+import { useTranslation } from "react-i18next";
 
 export const Account = () => {
   const { token, userId, updateToken } = useContext(AuthContext);
   const { user, loading } = useGetUser(token, userId);
   const logout = () => updateToken(null);
+  const { t } = useTranslation('common');
 
   return (
     <div className="min-h-screen pt-[50px] flex justify-center">
@@ -16,11 +18,11 @@ export const Account = () => {
       {!loading && (
         <div className="flex justify-between items-center gap-y-4 w-[90vw] h-fit">
           <div className="flex gap-x-4">
-            <TextInput label="First Name" disabled value={user?.firstName} />
-            <TextInput label="Last Name" disabled value={user?.lastName} />
+            <TextInput label={t("account.firstName")} disabled value={user?.firstName} />
+            <TextInput label={t("account.lastName")} disabled value={user?.lastName} />
           </div>
           <div className="flex justify-end">
-            <Button label="Logout" onClick={logout} />
+            <Button label={t("account.logout")} onClick={logout} />
           </div>
         </div>
       )}

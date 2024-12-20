@@ -1,0 +1,13 @@
+{
+  "login": {
+    "welcome": "Welcome",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Login"
+  },
+  "account": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "logout": "Logout"
+  }
+}

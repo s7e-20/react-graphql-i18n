@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { ApolloContextProvider as ApolloProvider } from "./components/ApolloProvider";
 import { AuthProvider } from "./components/AuthProvider";
+import './i18n';
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
