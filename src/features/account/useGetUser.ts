@@ -23,7 +23,7 @@ export const useGetUser = (token: string | null, userId: string | null) => {
 
   React.useEffect(() => {
     if (error) {
-      toast.error("Failed to fetch user data", { position: "bottom-right" });
+      toast.error("Failed to fetch user data", { position: "top-right" });
     }
   }, [error]);
 

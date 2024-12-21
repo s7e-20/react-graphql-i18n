@@ -40,7 +40,7 @@ export const useLogin = (updateToken: (token: string) => void) => {
 
   React.useEffect(() => {
     if (error) {
-      toast.error(error.message, { position: "bottom-right" });
+      toast.error(error.message, { position: "top-right" });
     }
   }, [error]);
 
