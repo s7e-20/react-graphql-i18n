@@ -2,7 +2,10 @@
   "login": {
     "welcome": "Welkom",
     "email": "E-mail",
+    "email-invalid": "E-Mail ist ungültig.",
+    "email-required": "E-Mail ist erforderlich.",
     "password": "Wachtwoord",
+    "password-required": "Passwort ist erforderlich.",
     "submit": "Inloggen"
   },
   "account": {
