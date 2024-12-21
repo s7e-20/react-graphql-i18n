@@ -8,8 +8,8 @@ import { LOGIN_MUTATION } from "../../gql/mutations/auth";
 import i18n from '../../i18n';
 
 const schema = yup.object().shape({
-  email: yup.string().email(i18n.t('common:login.email-invalid')).required(i18n.t('common:login.email-required')),
-  password: yup.string().required(i18n.t('common:login.password-required')),
+  email: yup.string().email('common:login.emailInvalid').required(i18n.t('common:login.emailRequired')),
+  password: yup.string().required(i18n.t('common:login.passwordRequired')),
 });
 
 export const useLogin = (updateToken: (token: string) => void) => {

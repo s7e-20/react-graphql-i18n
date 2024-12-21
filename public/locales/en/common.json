@@ -2,10 +2,10 @@
   "login": {
     "welcome": "Welcome",
     "email": "Email",
-    "email-invalid": "Email is invalid.",
-    "email-required": "Email is required.",
+    "emailInvalid": "Email is invalid.",
+    "emailRequired": "Email is required.",
     "password": "Password",
-    "password-required": "Password is required.",
+    "passwordRequired": "Password is required.",
     "submit": "Login"
   },
   "account": {
