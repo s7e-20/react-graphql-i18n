@@ -5,11 +5,10 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import * as yup from "yup";
 import { LOGIN_MUTATION } from "../../gql/mutations/auth";
-import i18n from '../../i18n';
 
 const schema = yup.object().shape({
-  email: yup.string().email('common:login.emailInvalid').required(i18n.t('common:login.emailRequired')),
-  password: yup.string().required(i18n.t('common:login.passwordRequired')),
+  email: yup.string().email('common:login.emailInvalid').required('common:login.emailRequired'),
+  password: yup.string().required('common:login.passwordRequired'),
 });
 
 export const useLogin = (updateToken: (token: string) => void) => {
