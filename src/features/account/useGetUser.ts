@@ -11,7 +11,7 @@ interface User {
 }
 
 export const useGetUser = (token: string | null, userId: string | null) => {
-  const { data, loading, error } = useQuery(GET_USER_QUERY, {
+  const { data, loading, error } = useQuery<{ user: User }>(GET_USER_QUERY, {
     variables: { id: userId },
     skip: !token || !userId,
     context: {
